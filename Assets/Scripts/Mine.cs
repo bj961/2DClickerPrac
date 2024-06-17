@@ -13,6 +13,9 @@ public class Mine : MonoBehaviour, IPointerClickHandler
     private void MineClicked()
     {
         Debug.Log("광산 클릭");
-        UserInfo.myInfo.Gold += UserInfo.myInfo.Income;
+        GameManager.Instance.OnClick();
+        // TODO :
+        // 사운드 출력
+        // 마우스 위치에 이펙트(파티클) 생성
     }
 }
