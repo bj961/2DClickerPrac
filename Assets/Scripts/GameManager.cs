@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public UserInfo userInfo;
-    bool isAutoClickOn = false;
     public Coroutine autoClickCoroutine;
 
     private void Awake()
@@ -31,15 +30,15 @@ public class GameManager : MonoBehaviour
 
     public void OnClick()
     {
-        userInfo.Gold += userInfo.Income * (1 + userInfo.Miner);
+        userInfo.Gold += userInfo.Income * userInfo.Miner;
         // TODO : 사운드 출력
     }
 
     IEnumerator AutoClick()
     {
-        while (isAutoClickOn)
+        while (true)
         {
-            Debug.Log("AutoClick!");
+            //Debug.Log("AutoClick!");
             OnClick();
             yield return new WaitForSeconds(1f);
         }

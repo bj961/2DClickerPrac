@@ -12,7 +12,6 @@ public class Mine : MonoBehaviour, IPointerClickHandler
 
     private void MineClicked()
     {
-        Debug.Log("광산 클릭");
         GameManager.Instance.OnClick();
         // TODO :
         // 사운드 출력

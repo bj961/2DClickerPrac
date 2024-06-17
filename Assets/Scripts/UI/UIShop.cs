@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIShop : MonoBehaviour
+public class UIShop : UIBase
 {
-    // Start is called before the first frame update
+    [SerializeField] private ItemBase ItemPickaxe;
+    [SerializeField] private ItemBase ItemMiner;
+
+
     void Start()
     {
-        
+        UserInfo.myInfo.SetMinerEvent(ItemMiner.SetText);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        UserInfo.myInfo.RemoveMinerEvent(ItemMiner.SetText);
     }
 }

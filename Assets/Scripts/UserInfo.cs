@@ -8,8 +8,6 @@ public class UserInfo
 {
     public static UserInfo myInfo { get => GameManager.Instance.userInfo; }
 
-    //public int mineLevel;
-
     public delegate void SetGold(int value);
     private event SetGold setGold;
     public delegate void SetIncome(int value);
@@ -48,7 +46,7 @@ public class UserInfo
         }
     }
 
-    private int miner = 0;
+    private int miner = 1;
     public int Miner
     {
         get
